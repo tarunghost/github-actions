@@ -2,7 +2,7 @@ name: tarun workflow
 on: push
 jobs:
   build:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: run a sample github action
