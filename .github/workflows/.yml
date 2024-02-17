@@ -1,29 +1,25 @@
-name: Selenium Tests
+name: CI/CD Pipeline with Selenium Tests
 
 on:
   push:
     branches:
-      - main  
+      - main  # Adjust the branch name as needed
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up JDK 
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'  
+      
+      - name: Run Selenium tests
+        run: |
+         
+          python -m pytest tests/selenium
+         
 
-    - name: Install dependencies
-      run: |
-       
-    - name: Run Selenium tests
-      run: 
-          pytest
        
 
             
